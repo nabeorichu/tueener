@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="wrapper col-md-offset-4 col-md-6 col-sm-10 col-sm-offset-1">
+        <p><%= notice %></p>
+        <h1>tuee!!一覧</h1>
+            <%= link_to "新たなtueeを投稿する", new_tweet_path, class: 'btn btn-primary btn-block' %>     
+            <% @tweets.each do |tweet| %>
+            <div class="row">
+                <h4><strong><%= tweet.content %></strong></h4>
+                <p><%= tweet.content %></p>
+                <%= link_to "編集する", edit_tweet_path(tweet.id), class: 'btn btn-default btn-success' %>
+                <%= link_to "削除する", tweet_path(tweet), method: :delete, data: { confirm: "本当に削除しますか？"}, class: 'btn btn-default btn-sm btn-denger' %>
+                </div>
+            <% end %>
+        
+    </div>
+</div>
+
